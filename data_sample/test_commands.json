@@ -15,5 +15,12 @@
       "price": ">= 100",
       "category": 1
     }
+  },
+  {
+    "action": 5,
+    "filter": {
+      "id": 1,
+      "count": 5
+    }
   }
 ]

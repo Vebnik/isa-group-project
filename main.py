@@ -39,9 +39,9 @@ if __name__ == '__main__':
             result = main(json.loads(file_data))
             print(result)
 
-            f = open('data_sample/command.json', 'r+')
-            f.truncate(0)
-            #break
+            #f = open('data_sample/command.json', 'r+')
+            #f.truncate(0)
+            break
 
             if result == 0:
                 break
