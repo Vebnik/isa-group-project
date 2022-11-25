@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 import json
 from time import sleep
 
@@ -14,7 +12,7 @@ def main(data):
     elif data.get('action') == consts.LIST_PRODUCTS:
         return products.get_product_list(data)
 
-    elif data.get('action') == consts.SINGLE_PRODUCT:
+    elif data.get('action') == consts.SINGLE_PRODUCT: # OK
         return products.get_single_product(data)
 
     elif data.get('action') == consts.LIST_CATEGORIES:
@@ -35,14 +33,13 @@ def main(data):
 
 if __name__ == '__main__':
     while True:
-        with open('data/command.json') as command_file:
+        with open('data_sample/command.json') as command_file:
             file_data = command_file.read()
         try:
             result = main(json.loads(file_data))
-
             print(result)
 
-            f = open('data/command.json', 'r+')
+            f = open('data_sample/command.json', 'r+')
             f.truncate(0)
 
             if result == 0:
