@@ -38,6 +38,18 @@ def put_product_to_cart(data):
         }
 
 
-
 def get_cart(data):
-    pass
+    with open('data_sample/cart.json', 'r', encoding='utf-8') as file_cart:
+        data_cart = json.loads(file_cart.read())
+        message = []
+
+        for index in range(len(data_cart)):
+            message.append(f'{index+1}. {data_cart[index]["name"]} ({data_cart[index]["price"]} руб.кг) добавлено {data_cart[index]["count"]} штука')
+        return {
+                "code": 200,
+                "message": "\n".join(message)
+            }
+
+
+
+
