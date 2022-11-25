@@ -1,7 +1,0 @@
-{
-  "action": 2,
-  "filter": {
-    "price": ">= 100",
-    "category": 1
-  }
-}
