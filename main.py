@@ -15,7 +15,7 @@ def main(data):
     elif data.get('action') == consts.SINGLE_PRODUCT: # OK
         return products.get_single_product(data)
 
-    elif data.get('action') == consts.LIST_CATEGORIES:
+    elif data.get('action') == consts.LIST_CATEGORIES: # OK
         return categories.get_category_list(data)
 
     elif data.get('action') == consts.PUT_TO_THE_CART:
@@ -39,8 +39,9 @@ if __name__ == '__main__':
             result = main(json.loads(file_data))
             print(result)
 
-            f = open('data_sample/command.json', 'r+')
-            f.truncate(0)
+            # f = open('data_sample/command.json', 'r+')
+            # f.truncate(0)
+            break
 
             if result == 0:
                 break
