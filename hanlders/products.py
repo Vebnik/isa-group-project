@@ -2,19 +2,6 @@ import json
 
 
 def get_product_list(data: dict):
-    # {
-    #     "action": 2,
-    #     "filter": {
-    #         "price": ['>100'|'<100'|'<=100'|'>=100'|None],
-    #         "category": <int|None>
-    #     }
-    # }
-
-    # {
-    #     "code": 200,
-    #     "data": "1. Груша (200 руб/кг) 10 шт.\n2. Яблоки (1000 руб/кг) 10шт."
-    # }
-
     with open('data_sample/catalog.json', 'r', encoding='utf-8') as file:
         file_product = json.loads(file.read())
 
@@ -29,7 +16,7 @@ def get_product_list(data: dict):
 
         for item in file_product:
             for d_item in item['products']:
-                if eval(f"{d_item['price']}{data.get('filter')['price']}"):
+                if eval(f"{d_item['price']}{data.get('filter')['price']}") and item['id'] == data.get('filter')['category']:
                     results_data.append(f"{d_item['id']}. {d_item['name']} ({d_item['price']} руб/{d_item['unit']})")
             
         return { "code": 200, "data": '\n'.join(results_data) }
