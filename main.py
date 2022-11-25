@@ -9,7 +9,7 @@ def main(data):
     if data.get('action') == consts.HELLO:
         return set_hello_message()
 
-    elif data.get('action') == consts.LIST_PRODUCTS:
+    elif data.get('action') == consts.LIST_PRODUCTS: # OK
         return products.get_product_list(data)
 
     elif data.get('action') == consts.SINGLE_PRODUCT: # OK
