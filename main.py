@@ -14,7 +14,7 @@ def main(data):
             return set_hello_message()
         case consts.LIST_PRODUCTS: # OK -> ⚗️
             return products.get_product_list(data)
-        case consts.SINGLE_PRODUCT: # OK
+        case consts.SINGLE_PRODUCT: # OK -> ⚗️
             return products.get_single_product(data)
         case consts.LIST_CATEGORIES: # OK
             return categories.get_category_list(data)
