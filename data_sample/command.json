@@ -1,3 +1,6 @@
 {
-  "action": 6
+  "action": 4,
+  "filter": {
+    "id": 2
+  }
 }

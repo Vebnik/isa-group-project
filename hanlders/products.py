@@ -28,19 +28,28 @@ def get_product_list(data: dict):
 
 
 def get_single_product(data: dict):
+
+    print(data)
+
     with open('data_sample/catalog.json', 'r', encoding='utf-8') as file:
         file_catalog = json.loads(file.read())
 
     try:
         for item in file_catalog:
             id = data.get('filter')['id']
+            data_products = []
+
             if item.get('id') == id:
                 for products in item.get('products'):
-                    if products['id'] == id:
-                        return {
-                            "code": 200,
-                            "message": f"{products.get('name')}.Цена: {products.get('price')} рублей за кг Остаток на складе: {products.get('balance')} штук Описание: {products.get('description')}"}
-            raise Exception
+                    format_str = f"{products.get('name')}\nЦена: {products.get('price')} рублей за кг\nОстаток на складе: {products.get('balance')} штук\nОписание: {products.get('description')}"
+                    data_products.append(format_str)
+                        
+                return {
+                    "code": 200,
+                    "message": data_products
+                }
+
+        raise Exception
     except:
         return {
             "code": 404,
