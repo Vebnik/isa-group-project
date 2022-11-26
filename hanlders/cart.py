@@ -1,4 +1,6 @@
 import json
+import pprint as pp
+
 
 def put_product_to_cart(data):
     with open('data_sample/catalog.json', encoding='utf-8') as catalog_file:
@@ -13,7 +15,7 @@ def put_product_to_cart(data):
                         basket = { 'name': products['name'], 'price': products['price'], 'count': count }
 
                         with open('data_sample/cart.json', 'r', encoding='utf-8') as cart_file:
-                            
+
                             cart_data = json.load(cart_file)
                             cart_data.append(basket)
 
@@ -29,9 +31,8 @@ def put_product_to_cart(data):
                             "code": 409,
                             "message": f"Невозможно добавить товар {products['name']} в количестве {count} штук в корзину, потому что их осталось всего {products['balance']}."
                         }
-            #raise Exception
+            raise Exception
     except Exception as ex:
-        print(ex)
         return {
             "code": 404,
             "message": "Товара с таким номер не найдено"

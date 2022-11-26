@@ -6,29 +6,24 @@ from hanlders import categories, products, set_hello_message, unknown_message, c
 
 
 def main(data):
-    if data.get('action') == consts.HELLO:
-        return set_hello_message()
 
-    elif data.get('action') == consts.LIST_PRODUCTS: # OK
-        return products.get_product_list(data)
-
-    elif data.get('action') == consts.SINGLE_PRODUCT: # OK
-        return products.get_single_product(data)
-
-    elif data.get('action') == consts.LIST_CATEGORIES: # OK
-        return categories.get_category_list(data)
-
-    elif data.get('action') == consts.PUT_TO_THE_CART:
-        return cart.put_product_to_cart(data)
-
-    elif data.get('action') == consts.SHOW_CART:
-        return cart.get_cart(data)
-
-    elif data.get('action') == consts.EXIT:
-        return 0
-
-    else:
-        return unknown_message()
+    match data.get('action'):
+        case consts.HELLO: # DEF
+            return set_hello_message()
+        case consts.LIST_PRODUCTS: # OK -> ⚗️
+            return products.get_product_list(data)
+        case consts.SINGLE_PRODUCT: # OK
+            return products.get_single_product(data)
+        case consts.LIST_CATEGORIES: # OK
+            return categories.get_category_list(data)
+        case consts.PUT_TO_THE_CART: # OK -> ⚗️
+            return cart.put_product_to_cart(data)
+        case consts.SHOW_CART: # OK -> ⚗️
+            return cart.get_cart(data)
+        case consts.EXIT: # DEF
+            return 0
+    
+    return unknown_message()
 
 
 if __name__ == '__main__':
