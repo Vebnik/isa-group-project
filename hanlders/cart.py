@@ -2,6 +2,7 @@ import json
 import pprint as pp
 
 
+
 def put_product_to_cart(data):
     with open('data_sample/catalog.json', encoding='utf-8') as catalog_file:
         file_catalog = json.loads(catalog_file.read())
