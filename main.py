@@ -4,6 +4,8 @@ from time import sleep
 import consts
 from hanlders import categories, products, set_hello_message, unknown_message, cart
 
+from tools.is_production import is_production
+
 
 def main(data):
 
@@ -34,9 +36,11 @@ if __name__ == '__main__':
             result = main(json.loads(file_data))
             print(result)
 
-            #f = open('data_sample/command.json', 'r+')
-            #f.truncate(0)
-            break
+            if not is_production(): 
+                break
+
+            f = open('data_sample/command.json', 'r+')
+            f.truncate(0)
 
             if result == 0:
                 break
