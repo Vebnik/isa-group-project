@@ -1,5 +1,17 @@
 # API-ядро для отработки практики
 
+## Запуск
+
+- Production:
+```bash
+python main.py -t prod
+```
+
+- Develop:
+```bash
+python main.py -t dev
+```
+
 ## Функционал
 
 1. Приветствие
