@@ -17,7 +17,7 @@ python main.py -t dev
 ```bash
 Name                                Stmts   Miss  Cover
 -------------------------------------------------------
-hanlders\__init__.py                    6      1    83%
+hanlders\__init__.py                    6      0   100%
 hanlders\cart.py                       31      0   100%
 hanlders\categories.py                 12      0   100%
 hanlders\products.py                   33      0   100%
@@ -29,8 +29,9 @@ tests\test_get_single_product.py       11      0   100%
 tests\test_hello_message.py             6      0   100%
 tests\test_help.py                      6      0   100%
 tests\test_put_product_to_cart.py      16      0   100%
+tests\test_unknown_message.py           3      0   100%
 -------------------------------------------------------
-TOTAL                                 157      1    99%
+TOTAL                                 160      0   100%
 ```
 
 - Суммароное покрытие тестами выше 80%
