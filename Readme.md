@@ -258,7 +258,7 @@ tests\test_get_product_list.py          6      0   100%
 tests\test_get_single_product.py        7      0   100%
 tests\test_put_product_to_cart.py      10      0   100%
 -------------------------------------------------------
-TOTAL                                 115     10    91%                               100      9    91%
+TOTAL                                 115     10    91%
 ```
 
 - Суммароное покрытие тестами выше 80%
