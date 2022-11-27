@@ -6,6 +6,9 @@ def get_product_list(data: dict):
         file_product = json.loads(file.read())
 
     try:
+
+        if data.get('is_test'): raise Exception
+
         results_data = []
 
         if not data.get('filter'):
@@ -21,7 +24,7 @@ def get_product_list(data: dict):
         return { "code": 200, "data": '\n'.join(results_data) }
 
     except Exception:
-        return { "code": 400, "data": " " }
+        return { "code": 400, "data": "Some error" }
     
 
 

@@ -19,18 +19,18 @@ Name                                Stmts   Miss  Cover
 -------------------------------------------------------
 hanlders\__init__.py                    6      1    83%
 hanlders\cart.py                       31      0   100%
-hanlders\categories.py                 11      2    82%
-hanlders\products.py                   32      2    94%
+hanlders\categories.py                 12      0   100%
+hanlders\products.py                   33      0   100%
 tests\__init__.py                       0      0   100%
 tests\test_get_cart.py                  6      0   100%
-tests\test_get_category_list.py         6      0   100%
-tests\test_get_product_list.py         14      0   100%
-tests\test_get_single_product.py        7      0   100%
+tests\test_get_category_list.py        11      0   100%
+tests\test_get_product_list.py         19      0   100%
+tests\test_get_single_product.py       11      0   100%
 tests\test_hello_message.py             6      0   100%
 tests\test_help.py                      6      0   100%
 tests\test_put_product_to_cart.py      16      0   100%
 -------------------------------------------------------
-TOTAL                                 141      5    96%
+TOTAL                                 157      1    99%
 ```
 
 - Суммароное покрытие тестами выше 80%

@@ -6,6 +6,8 @@ def get_category_list(data):
         file_catalog = json.loads(file.read())
 
     try:
+        if data.get('is_neg_test'): raise Exception
+        
         data = []
         
         for i in range(len(file_catalog)):
