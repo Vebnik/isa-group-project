@@ -2,7 +2,9 @@ from hanlders import cart
 
 
 def data():
-  return True
+  return {
+    "action": 6
+  }
 
 
 def test_get_cart(data=data()):

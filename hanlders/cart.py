@@ -47,6 +47,7 @@ def get_cart(data):
 
         for index in range(len(data_cart)):
             message.append(f'{index+1}. {data_cart[index]["name"]} ({data_cart[index]["price"]} руб/кг) добавлено {data_cart[index]["count"]} штук')
+            
         return {
                 "code": 200,
                 "message": "\n".join(message)

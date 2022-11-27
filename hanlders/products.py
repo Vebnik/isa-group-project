@@ -13,7 +13,6 @@ def get_product_list(data: dict):
                 results_data.append('\n'.join([f"{i['id']}. {i['name']} ({i['price']} руб/{i['unit']})" for i in item['products']]))
             return { "code": 200, "data": results_data }
 
-
         for item in file_product:
             for d_item in item['products']:
                 if eval(f"{d_item['price']}{data.get('filter')['price']}") and item['id'] == data.get('filter')['category']:
@@ -21,16 +20,12 @@ def get_product_list(data: dict):
             
         return { "code": 200, "data": '\n'.join(results_data) }
 
-    except Exception as ex:
-        print(ex.with_traceback())
+    except Exception:
         return { "code": 400, "data": " " }
     
 
 
 def get_single_product(data: dict):
-
-    print(data)
-
     with open('data_sample/catalog.json', 'r', encoding='utf-8') as file:
         file_catalog = json.loads(file.read())
 
@@ -44,14 +39,9 @@ def get_single_product(data: dict):
                     format_str = f"{products.get('name')}\nЦена: {products.get('price')} рублей за кг\nОстаток на складе: {products.get('balance')} штук\nОписание: {products.get('description')}"
                     data_products.append(format_str)
                         
-                return {
-                    "code": 200,
-                    "message": data_products
-                }
+                return { "code": 200, "message": data_products }
 
         raise Exception
+
     except:
-        return {
-            "code": 404,
-            "message": "Товара с таким номер не найдено"
-        }
+        return { "code": 404, "message": "Товара с таким номер не найдено" }

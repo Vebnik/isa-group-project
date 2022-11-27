@@ -41,7 +41,6 @@ data_3 = {
 }
 
 
-
 def test_put_product_to_cart_3():
     assert put_product_to_cart(data_3) == {
         "code": 409,

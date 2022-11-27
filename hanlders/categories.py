@@ -7,16 +7,11 @@ def get_category_list(data):
 
     try:
         data = []
+        
         for i in range(len(file_catalog)):
             data.append(f'{i+1}. {file_catalog[i].get("name")}')
 
-        return {
-            "code": 200,
-            "data": '\n'.join(data)
-        }
+        return { "code": 200, "data": '\n'.join(data) }
 
     except:
-        return {
-            "code": 400,
-            "data": "Some error"
-        }
+        return { "code": 400, "data": "Some error" }
