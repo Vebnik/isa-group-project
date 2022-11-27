@@ -2,7 +2,7 @@ import json
 
 
 def get_product_list(data: dict):
-    with open('data_sample/catalog.json', 'r', encoding='utf-8') as file:
+    with open('data/catalog.json', 'r', encoding='utf-8') as file:
         file_product = json.loads(file.read())
 
     try:
@@ -26,7 +26,7 @@ def get_product_list(data: dict):
 
 
 def get_single_product(data: dict):
-    with open('data_sample/catalog.json', 'r', encoding='utf-8') as file:
+    with open('data/catalog.json', 'r', encoding='utf-8') as file:
         file_catalog = json.loads(file.read())
 
     try:

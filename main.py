@@ -10,13 +10,13 @@ from tools.is_production import is_production
 def main(data):
 
     match data.get('action'):
-        case consts.HELLO: # DEF
+        case consts.HELLO: # OK -> ⚗️
             return set_hello_message()
         case consts.LIST_PRODUCTS: # OK -> ⚗️
             return products.get_product_list(data)
         case consts.SINGLE_PRODUCT: # OK -> ⚗️
             return products.get_single_product(data)
-        case consts.LIST_CATEGORIES: # OK
+        case consts.LIST_CATEGORIES: # OK -> ⚗️
             return categories.get_category_list(data)
         case consts.PUT_TO_THE_CART: # OK -> ⚗️
             return cart.put_product_to_cart(data)
@@ -30,7 +30,7 @@ def main(data):
 
 if __name__ == '__main__':
     while True:
-        with open('data_sample/command.json') as command_file:
+        with open('data/command.json') as command_file:
             file_data = command_file.read()
         try:
             result = main(json.loads(file_data))
@@ -39,7 +39,7 @@ if __name__ == '__main__':
             if not is_production(): 
                 break
 
-            f = open('data_sample/command.json', 'r+')
+            f = open('data/command.json', 'r+')
             f.truncate(0)
 
             if result == 0:

@@ -2,7 +2,7 @@ import json
 
 
 def get_category_list(data):
-    with open('data_sample/catalog.json', 'r', encoding='utf-8') as file:
+    with open('data/catalog.json', 'r', encoding='utf-8') as file:
         file_catalog = json.loads(file.read())
 
     try:

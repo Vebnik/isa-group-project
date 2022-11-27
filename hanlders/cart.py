@@ -4,7 +4,7 @@ import pprint as pp
 
 
 def put_product_to_cart(data):
-    with open('data_sample/catalog.json', encoding='utf-8') as catalog_file:
+    with open('data/catalog.json', encoding='utf-8') as catalog_file:
         file_catalog = json.loads(catalog_file.read())
     try:
         for i in file_catalog:
@@ -15,12 +15,12 @@ def put_product_to_cart(data):
                     if products['id'] == id and products['balance'] >= count:
                         basket = { 'name': products['name'], 'price': products['price'], 'count': count }
 
-                        with open('data_sample/cart.json', 'r', encoding='utf-8') as cart_file:
+                        with open('data/cart.json', 'r', encoding='utf-8') as cart_file:
 
                             cart_data = json.load(cart_file)
                             cart_data.append(basket)
 
-                            with open('data_sample/cart.json', 'w', encoding='utf-8') as cart_file_pass:
+                            with open('data/cart.json', 'w', encoding='utf-8') as cart_file_pass:
                                 cart_file_pass.write(json.dumps(cart_data, indent=2))
 
                         return {
@@ -41,17 +41,15 @@ def put_product_to_cart(data):
 
 
 def get_cart(data):
-    with open('data_sample/cart.json', 'r', encoding='utf-8') as file_cart:
+    with open('data/test_cart.json' if data.get('is_test') else 'data/cart.json', 'r', encoding='utf-8') as file_cart:
         data_cart = json.loads(file_cart.read())
+
         message = []
 
         for index in range(len(data_cart)):
             message.append(f'{index+1}. {data_cart[index]["name"]} ({data_cart[index]["price"]} руб/кг) добавлено {data_cart[index]["count"]} штук')
             
-        return {
-                "code": 200,
-                "message": "\n".join(message)
-            }
+        return { "code": 200, "message": "\n".join(message) }
 
 
 

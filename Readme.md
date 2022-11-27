@@ -12,6 +12,29 @@ python main.py -t prod
 python main.py -t dev
 ```
 
+## Результаты тестирования
+
+```bash
+Name                                Stmts   Miss  Cover
+-------------------------------------------------------
+hanlders\__init__.py                    6      1    83%
+hanlders\cart.py                       31      0   100%
+hanlders\categories.py                 11      2    82%
+hanlders\products.py                   32      2    94%
+tests\__init__.py                       0      0   100%
+tests\test_get_cart.py                  6      0   100%
+tests\test_get_category_list.py         6      0   100%
+tests\test_get_product_list.py         14      0   100%
+tests\test_get_single_product.py        7      0   100%
+tests\test_hello_message.py             6      0   100%
+tests\test_help.py                      6      0   100%
+tests\test_put_product_to_cart.py      16      0   100%
+-------------------------------------------------------
+TOTAL                                 141      5    96%
+```
+
+- Суммароное покрытие тестами выше 80%
+
 ## Функционал
 
 1. Приветствие
@@ -242,23 +265,3 @@ python main.py -t dev
     "message": "1. Яблоки (200 руб/кг) добавлено 5 штук\n2. Груши (150 руб/кг) добавлено 1 штука"
 }
 ```
-
-## Результаты тестирования
-```bash
-Name                                Stmts   Miss  Cover
--------------------------------------------------------
-hanlders\__init__.py                    6      3    50%
-hanlders\cart.py                       31      0   100%
-hanlders\categories.py                 11      2    82%
-hanlders\products.py                   32      5    84%
-tests\__init__.py                       0      0   100%
-tests\test_get_cart.py                  6      0   100%
-tests\test_get_category_list.py         6      0   100%
-tests\test_get_product_list.py          6      0   100%
-tests\test_get_single_product.py        7      0   100%
-tests\test_put_product_to_cart.py      10      0   100%
--------------------------------------------------------
-TOTAL                                 115     10    91%
-```
-
-- Суммароное покрытие тестами выше 80%
