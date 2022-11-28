@@ -2,7 +2,7 @@ import json
 from time import sleep
 
 import consts
-from hanlders import categories, products, set_hello_message, unknown_message, cart
+from hanlders import categories, products, set_hello_message, unknown_message, cart, my_help
 
 from tools.is_production import is_production
 
@@ -10,6 +10,8 @@ from tools.is_production import is_production
 def main(data):
 
     match data.get('action'):
+        case consts.HELP: # OK -> ⚗️
+            return my_help()
         case consts.HELLO: # OK -> ⚗️
             return set_hello_message()
         case consts.LIST_PRODUCTS: # OK -> ⚗️
@@ -42,7 +44,7 @@ if __name__ == '__main__':
             f = open('data/command.json', 'r+')
             f.truncate(0)
 
-            if result == 0:
+            if result == 0: 
                 break
 
         except:

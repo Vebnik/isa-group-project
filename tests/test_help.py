@@ -1,4 +1,4 @@
-from hanlders import help
+from hanlders import my_help
 
 
 
@@ -15,4 +15,4 @@ def test_help(data=data()):
     "data": "1 - Вывести это сообщение.\n2 - Показать список продуктов. Можно передать в тело номер категории, чтобы получить товары определенной категории. ..."
   }
 
-  assert help(data) == true_data
+  assert my_help(data) == true_data
