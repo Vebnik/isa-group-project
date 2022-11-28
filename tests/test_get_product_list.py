@@ -4,21 +4,24 @@ from hanlders import products
 def data():
   return {
     "action": 2,
-    "filter": { "price": ">= 100", "category": 1 }
+    "filter": { "price": ">= 100", "category": 1 },
+    'is_test': True
   }
 
 
 def data_2():
   return {
   "action": 2,
-  "filter": { "price": "< 100", "category": 1 }
+  "filter": { "price": "< 100", "category": 1 },
+  'is_test': True
 }
 
 
 def data_3():
   return {
   "action": 2,
-  "filter": {}
+  "filter": {},
+  'is_test': True
 }
 
 
@@ -26,7 +29,7 @@ def data_4():
   return {
     "action": 2,
     "filter": {},
-    'is_test': True
+    'is_neg_test': True
   }
 
 

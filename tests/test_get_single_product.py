@@ -4,13 +4,15 @@ from hanlders import products
 def data_1():
   return {
     "action": 4,
-    "filter": { "id": 2 }
+    "filter": { "id": 2 },
+    "is_test": True
   }
 
 def data_2(): 
   return {
     "action": 4,
-    "filter": { "id": 10 }
+    "filter": { "id": 10 },
+    "is_test": True
   }
 
 

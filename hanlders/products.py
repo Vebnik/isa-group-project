@@ -2,12 +2,12 @@ import json
 
 
 def get_product_list(data: dict):
-    with open('data/catalog.json', 'r', encoding='utf-8') as file:
+    with open('test_data/catalog.json' if data.get('is_test') else 'data/catalog.json', 'r', encoding='utf-8') as file:
         file_product = json.loads(file.read())
 
     try:
 
-        if data.get('is_test'): raise Exception
+        if data.get('is_neg_test'): raise Exception
 
         results_data = []
 
@@ -29,7 +29,7 @@ def get_product_list(data: dict):
 
 
 def get_single_product(data: dict):
-    with open('data/catalog.json', 'r', encoding='utf-8') as file:
+    with open('test_data/catalog.json' if data.get('is_test') else 'data/catalog.json', 'r', encoding='utf-8') as file:
         file_catalog = json.loads(file.read())
 
     try:

@@ -4,7 +4,8 @@ from hanlders.categories import get_category_list
 def data():
   return {
   "action": 3,
-  "filter": {}
+  "filter": {},
+  "is_test": True
 }
 
 def data_2():

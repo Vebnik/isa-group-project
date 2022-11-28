@@ -1,0 +1,26 @@
+[
+  {
+    "action": 4,
+    "filter": {
+      "id": 1
+    }
+  },
+  {
+    "action": 3,
+    "filter": {}
+  },
+  {
+    "action": 2,
+    "filter": {
+      "price": ">= 100",
+      "category": 1
+    }
+  },
+  {
+    "action": 5,
+    "filter": {
+      "id": 1,
+      "count": 5
+    }
+  }
+]

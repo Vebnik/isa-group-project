@@ -4,7 +4,7 @@ import pprint as pp
 
 
 def put_product_to_cart(data):
-    with open('data/catalog.json', encoding='utf-8') as catalog_file:
+    with open('test_data/catalog.json' if data.get('is_test') else 'data/catalog.json', encoding='utf-8') as catalog_file:
         file_catalog = json.loads(catalog_file.read())
     try:
         for i in file_catalog:
@@ -15,12 +15,12 @@ def put_product_to_cart(data):
                     if products['id'] == id and products['balance'] >= count:
                         basket = { 'name': products['name'], 'price': products['price'], 'count': count }
 
-                        with open('data/cart.json', 'r', encoding='utf-8') as cart_file:
+                        with open('test_data/test_cart.json' if data.get('is_test') else 'data/cart.json', 'r', encoding='utf-8') as cart_file:
 
                             cart_data = json.load(cart_file)
                             cart_data.append(basket)
 
-                            with open('data/cart.json', 'w', encoding='utf-8') as cart_file_pass:
+                            with open('test_data/test_cart.json' if data.get('is_test') else 'data/cart.json', 'w', encoding='utf-8') as cart_file_pass:
                                 cart_file_pass.write(json.dumps(cart_data, indent=2))
 
                         return {
@@ -41,7 +41,7 @@ def put_product_to_cart(data):
 
 
 def get_cart(data):
-    with open('data/test_cart.json' if data.get('is_test') else 'data/cart.json', 'r', encoding='utf-8') as file_cart:
+    with open('test_data/cart.json' if data.get('is_test') else 'data/cart.json', 'r', encoding='utf-8') as file_cart:
         data_cart = json.loads(file_cart.read())
 
         message = []

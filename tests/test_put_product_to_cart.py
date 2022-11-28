@@ -4,21 +4,24 @@ from hanlders.cart import put_product_to_cart
 def data_1():
     return {
         "action": 5,
-        "filter": { "id": 1, "count": 5 }
+        "filter": { "id": 1, "count": 5 },
+        "is_test": True
     }
 
 
 def data_2():
     return {
         "action": 5,
-        "filter": { "id": 555, "count": 5 }
+        "filter": { "id": 555, "count": 5 },
+        "is_test": True
     }
 
 
 def data_3():
     return {
         "action": 5,
-        "filter": { "id": 1, "count": 11 }
+        "filter": { "id": 1, "count": 11 },
+        "is_test": True
     }
 
 
@@ -29,9 +32,9 @@ def test_put_product_to_cart():
 
 
 def test_put_product_to_cart_2():
-    tru_data = { "code": 404, "message": 'Товара с таким номер не найдено' }
+    true_data = { "code": 404, "message": 'Товара с таким номер не найдено' }
     
-    assert put_product_to_cart(data_2()) == tru_data
+    assert put_product_to_cart(data_2()) == true_data
 
 
 def test_put_product_to_cart_3():
